@@ -61,7 +61,11 @@ void	print_unum(unsigned int n, int *counter)
 		print_unum (n / 10, counter);
 	s = n % 10 + 48;
 	(*counter)++;
-	write(1, &s, 1);
+	if (write(1, &s, 1) < 0)
+	{
+		(*counter) = -1;
+		return ;
+	}
 }
 
 void	putstr(char *s, int *counter)
@@ -85,6 +89,10 @@ void	putstr(char *s, int *counter)
 
 void	print_char(int c, int *counter)
 {
-	write(1, &c, 1);
+	if (write(1, &c, 1) < 0)
+	{
+		(*counter) = -1;
+		return ;
+	}
 	(*counter)++;
 }

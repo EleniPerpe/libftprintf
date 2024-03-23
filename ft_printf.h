@@ -25,7 +25,7 @@
 void	print_char(int c, int *counter);
 void	print_num(int n, int *counter);
 void	putstr(char *s, int *counter);
-void	print_hex(char *res, int hex_len);
+void	print_hex(char *res, int hex_len, int *counter);
 char	*hex_calc(unsigned int n, int *counter, char c);
 int		print_cases(const char *input, va_list args, int i, int *counter);
 int		ft_printf(const char *input, ...);

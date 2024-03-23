@@ -25,7 +25,8 @@ int	ft_printf(const char *input, ...)
 	{
 		if (input[i] != '%')
 		{
-			write(1, &input[i], 1);
+			if (write(1, &input[i], 1) < 0)
+				return (-1);
 			counter++;
 		}
 		else
@@ -35,7 +36,6 @@ int	ft_printf(const char *input, ...)
 		}
 		i++;
 	}
-	// printf("%d\n", counter);
 	va_end(args);
 	return (counter);
 }
@@ -60,19 +60,3 @@ int	print_cases(const char *input, va_list args, int i, int *counter)
 		print_char(input[i], counter);
 	return (1);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	(void)argc;
-// 	// int a = 0;
-// 	// int b = 0;
-// 	// long c = 542145337;
-	
-// 	ft_printf("\n__________ELENI___________\n");
-// 	a = ft_printf("prinf: %d\n", c);
-// 	ft_printf("f : %d\n\n\n", a);
-
-// 	printf("\n__________ORIGINAL___________\n");
-// 	a = printf("print: %d\n", c);
-// 	printf("p : %d\n\n\n", a);
-// }

@@ -37,18 +37,19 @@ char	*hex_calc(unsigned int n, int *counter, char c)
 		n = n / 16;
 		i++;
 	}
-	print_hex(res, hex_len);
+	print_hex(res, hex_len, counter);
 	return (res);
 }
 
-void	print_hex(char *res, int hex_len)
+void	print_hex(char *res, int hex_len, int *counter)
 {
 	int	i;
 
 	i = 0;
 	while (i < hex_len)
 	{
-		write(1, &res[i], 1);
+		if (write(1, &res[i], 1) < 0)
+			(*counter) = -1;
 		i++;
 	}
 	free(res);
