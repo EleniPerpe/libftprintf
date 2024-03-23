@@ -45,12 +45,6 @@ void	print_unum(unsigned int n, int *counter)
 {
 	char	s;
 
-	if (n < 0)
-	{
-		n *= -1;
-		write(1, "-", 1);
-		(*counter)++;
-	}
 	if (n == 0)
 	{
 		write(1, "0", 1);
@@ -81,7 +75,11 @@ void	putstr(char *s, int *counter)
 	}
 	while (s[i] != '\0')
 	{
-		write(1, &s[i], 1);
+		if (write(1, &s[i], 1) < 0)
+		{
+			(*counter) = -1;
+			return ;
+		}
 		i++;
 		(*counter)++;
 	}
