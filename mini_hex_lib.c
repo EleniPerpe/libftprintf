@@ -19,8 +19,7 @@ char	*hex_calc(unsigned int n, int *counter, char c)
 	int		i;
 
 	i = 0;
-	hex_len = check_null_hex(n);
-	(*counter) += hex_len;
+	hex_len = check_null_hex(n, counter);
 	res = malloc(hex_len + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
@@ -42,18 +41,20 @@ char	*hex_calc(unsigned int n, int *counter, char c)
 	return (res);
 }
 
-void print_hex(char *res, int hex_len) 
+void	print_hex(char *res, int hex_len)
 {
-    int i = 0;
+	int	i;
 
-    while (i < hex_len) {
-        write(1, &res[i], 1);
-        i++;
-    }
-    free(res);
+	i = 0;
+	while (i < hex_len)
+	{
+		write(1, &res[i], 1);
+		i++;
+	}
+	free(res);
 }
 
-int	check_null_hex(unsigned long n)
+int	check_null_hex(unsigned long n, int *counter)
 {
 	int	hex_len;
 
@@ -68,5 +69,6 @@ int	check_null_hex(unsigned long n)
 			hex_len++;
 		}
 	}
+	(*counter) += hex_len;
 	return (hex_len);
 }

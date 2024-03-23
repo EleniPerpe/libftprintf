@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 11:44:39 by eperperi          #+#    #+#             */
-/*   Updated: 2024/03/23 13:54:10 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/03/23 14:04:47 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,18 @@ int	print_cases(const char *input, va_list args, int i, int *counter)
 	return (1);
 }
 
-// int	main(void)
+// int	main(int argc, char **argv)
 // {
-// 	int a = 0;
+// 	(void)argc;
+// 	// int a = 0;
 // 	// int b = 0;
-// 	int c = 345678908;
+// 	// long c = 542145337;
 	
 // 	ft_printf("\n__________ELENI___________\n");
-// 	a = ft_printf("prinf: %x\n", c);
+// 	a = ft_printf("prinf: %d\n", c);
 // 	ft_printf("f : %d\n\n\n", a);
 
 // 	printf("\n__________ORIGINAL___________\n");
-// 	a = printf("print: %x\n", c);
+// 	a = printf("print: %d\n", c);
 // 	printf("p : %d\n\n\n", a);
 // }

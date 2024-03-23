@@ -21,7 +21,6 @@ char	*p_calc(unsigned long n, int *counter)
 	int		hex_len;
 	int		temp;
 
-	
 	hex_len = check_null_p(n);
 	temp = hex_len;
 	res = malloc(hex_len + 3 * sizeof(char));
@@ -41,9 +40,9 @@ char	*p_calc(unsigned long n, int *counter)
 	return (res);
 }
 
-void print_p(char *res, int hex_len)
+void	print_p(char *res, int hex_len)
 {
-	char *res_adrress;
+	char	*res_adrress;
 
 	res[0] = '0';
 	res[1] = 'x';

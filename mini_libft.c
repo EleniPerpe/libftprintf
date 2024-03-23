@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:23:20 by eperperi          #+#    #+#             */
-/*   Updated: 2024/03/23 11:36:33 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/03/23 14:04:42 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	print_num(int n, int *counter)
 {
-	int		i;
 	char	s;
 
-	i = 0;
 	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
@@ -30,7 +28,7 @@ void	print_num(int n, int *counter)
 		write(1, "-", 1);
 		(*counter)++;
 	}
-	if (n == 0)
+	else if (n == 0)
 	{
 		write(1, "0", 1);
 		(*counter)++;
@@ -40,22 +38,13 @@ void	print_num(int n, int *counter)
 		print_num (n / 10, counter);
 	s = n % 10 + 48;
 	(*counter)++;
-	write(1, &s, 1);
+	write(1, &(s), 1);
 }
 
-
-void	print_unum(long n, int *counter)
+void	print_unum(unsigned int n, int *counter)
 {
-	int		i;
 	char	s;
 
-	i = 0;
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		(*counter) += 11;
-		return ;
-	}
 	if (n < 0)
 	{
 		n *= -1;
