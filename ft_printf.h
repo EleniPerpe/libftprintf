@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 19:55:11 by eperperi          #+#    #+#             */
-/*   Updated: 2024/03/20 10:32:13 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/03/23 13:56:37 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdio.h>
 # include <stddef.h>
@@ -20,5 +20,19 @@
 # include <ctype.h>
 # include <string.h>
 # include <stdarg.h>
+# include <limits.h>
+
+void	print_char(int c, int *counter);
+void	print_num(int n, int *counter);
+void	putstr(char *s, int *counter);
+void 	print_hex(char *res, int hex_len);
+char	*hex_calc(unsigned int n, int *counter, char c);
+int		print_cases(const char *input, va_list args, int i, int *counter);
+int		ft_printf(const char *input, ...);
+void	print_unum(long n, int *counter);
+char	*p_calc(unsigned long n, int *counter);
+int		check_null_p(unsigned long n);
+int		check_null_hex(unsigned long n);
+void 	print_p(char *res, int hex_len);
 
 #endif
