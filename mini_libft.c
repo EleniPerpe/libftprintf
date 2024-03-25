@@ -85,12 +85,13 @@ void	putstr(char *s, int *counter)
 	}
 }
 
-void	print_char(int c, int *counter)
+int	*print_char(int c, int *counter)
 {
 	if (write(1, &c, 1) < 0)
 	{
 		(*counter) = -1;
-		return ;
+		return (counter);
 	}
 	(*counter)++;
+	return (counter);
 }
