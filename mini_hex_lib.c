@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 11:32:38 by eperperi          #+#    #+#             */
-/*   Updated: 2024/03/23 13:56:26 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/03/26 09:19:09 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ void	print_hex(char *res, int hex_len, int *counter)
 	while (i < hex_len)
 	{
 		if (write(1, &res[i], 1) < 0)
+		{
 			(*counter) = -1;
+			return ;
+		}
 		i++;
 	}
 	free(res);
